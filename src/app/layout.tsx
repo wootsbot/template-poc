@@ -2,6 +2,7 @@ import { Geist_Mono, Inter } from "next/font/google";
 
 import "./globals.css";
 
+import { TooltipProvider } from "#/components/ui/tooltip";
 import { cn } from "#/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -22,7 +23,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
     >
-      <body>{children}</body>
+      <body>
+        <TooltipProvider>{children}</TooltipProvider>
+      </body>
     </html>
   );
 }
